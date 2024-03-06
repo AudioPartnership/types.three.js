@@ -45,6 +45,26 @@ export class EventDispatcher<TEventMap extends {} = {}> {
     constructor();
 
     /**
+     * Number of references to the object.
+     */
+    readonly refs: number;
+
+    /**
+     * References the object.
+     */
+    ref(): this;
+
+    /**
+     * Unreferences the object.
+     */
+    unref(): this;
+
+    /**
+     * Frees the object.
+     */
+    dispose(): void;
+
+    /**
      * Adds a listener to an event type.
      * @param type The type of event to listen to.
      * @param listener The function that gets called when the event is fired.
